@@ -1,16 +1,17 @@
-using mengova.Models;
-using mengova.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using mengova.Data;
+using mengova.Models;
 using System.Diagnostics;
 
-namespace mengova.Controllers
+namespace PurvoZadanie.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context) : base(context) 
         {
             _logger = logger;
             _context = context;
@@ -18,11 +19,8 @@ namespace mengova.Controllers
 
         public IActionResult Index()
         {
-            return View(_context.mengova);
-        }
+            ViewBag.Categories = _context.mengova.ToList();
 
-        public IActionResult Privacy()
-        {
             return View();
         }
 
