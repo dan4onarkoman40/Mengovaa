@@ -1,0 +1,32 @@
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+
+# Ignore IIS configuration
+/.vs/
+*.vspscc
+
+# Ignore temporary files and folders
+tmp/
+temp/
+
+# Ignore log files
+*.log
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore package directories
+packages/
+node_modules/
+
+# Ignore backup files
+*.bak
+
+# Ignore publish directory
+publish/
